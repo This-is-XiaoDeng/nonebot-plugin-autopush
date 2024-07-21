@@ -70,8 +70,22 @@ _✨ NoneBot 插件简单描述 ✨_
 
 在 nonebot2 项目的`.env`文件中添加下表中的必填配置
 
-| 配置项 | 必填 | 默认值 | 说明 |
-|:-----:|:----:|:----:|:----:|
+|           配置项           |                类型                | 必填  |        默认值        |           说明           |
+|:-----------------------:|:--------------------------------:|:---:|:-----------------:|:----------------------:|
+|   `AUTOPUSH_SERVERS`    | `list[Union[str, ServerConfig]]` |  是  |         无         |       Server 列表        |
+|    `AUTOPUSH_PROXY`     |         `Optional[str]`          |  否  |      `None`       |     请求 URL 时使用的代理      |
+| `AUTOPUSH_SUCCESS_CODE` |           `list[int]`            |  否  |   `[200, 204]`    |       推送成功时的状态码        |
+|  `AUTOPUSH_PUSH_CRON`   |         `dict[str, str]`         |  否  | `{"minute": "*"}` | 推送间隔（Apscheduler 任务参数） |
+
+### `ServerConfig`
+
+```python
+class ServerConfig(BaseModel):
+    url: str
+    headers: dict[str, str] = {}
+    method: str = "GET"
+    data: Optional[str] = None
+```
 
 ## 🎉 使用
 

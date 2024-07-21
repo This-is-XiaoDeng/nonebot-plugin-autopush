@@ -10,3 +10,5 @@ __plugin_meta__ = PluginMetadata(
 )
 
 require("nonebot_plugin_apscheduler")
+
+from . import __main__
