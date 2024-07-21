@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-autopush"
-version = "0.1.0"
+version = "0.1.1"
 description = "NoneBot2 自动状态推送"
 authors = [
     {name = "XiaoDeng3386", email = "1744793737@qq.com"},
